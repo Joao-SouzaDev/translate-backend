@@ -10,7 +10,3 @@ app.listen(port,() => {
     console.log(`Escutando a porta ${port}`);
     
 })
-
-app.get('/user/:id',(req,res) => {
-    res.send(`resposta user ${req.params.id}`)
-})
