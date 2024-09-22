@@ -5,7 +5,8 @@ async function sendTranslateRequest(phrase) {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const promp = `translate '${phrase}' from english to portuguese, only translate, without variables.`;
     const result = await model.generateContent(promp);
-    return result.response.text();
+    const translatedText = result.response.text().replace("\n","")
+    return translatedText;
 }
 
 module.exports = {
